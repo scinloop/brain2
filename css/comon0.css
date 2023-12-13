@@ -164,7 +164,7 @@ a:hover {
 
 .head {
 	height: 1.05rem;
-	background: url(../images/head_bg.jpg) no-repeat center center;
+	background: url(../images/head_bg.png) no-repeat center center;
 	background-size: 100% 100%;
 	position: relative;
 	z-index: 100;
@@ -203,7 +203,7 @@ a:hover {
 }
 
 .titlename {
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 200px;
 }
 
@@ -232,6 +232,26 @@ a:hover {
 	padding-right: .1rem;
 }
 
+
+.buttonslect {
+	position: absolute;
+	left: .3rem;
+	top: 0;
+	line-height: .75rem;
+}
+
+.buttonslect img {
+	width: .37rem;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.buttonslect span {
+	color: black;
+	font-size: .18rem;
+	padding-right: .1rem;
+}
+
 .mainbox {
 	padding: .1rem .1rem 0rem .1rem;
 }
@@ -255,7 +275,7 @@ a:hover {
 .boxall {
 	border: 1px solid rgba(25, 186, 139, .17);
 	padding: 0 .2rem .4rem .15rem;
-	background: rgba(255, 255, 255, .04) url(../images/line\(1\).png);
+	background: rgba(255, 255, 255, .04) url(../images/line.png);
 	background-size: 100% auto;
 	position: relative;
 	margin-bottom: .15rem;
