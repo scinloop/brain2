@@ -21,7 +21,7 @@ body {
 }
 
 body {
-	background: #000d4a url(../images/bg.png) center top;
+	background: url(../images/bg.png) center top;
 	background-size: cover;
 	color: #666;
 	font-size: .1rem;
@@ -164,7 +164,7 @@ a:hover {
 
 .head {
 	height: 1.05rem;
-	background: url(../images/head_bg.png) no-repeat center center;
+	background: url(../images/head_bg.jpg) no-repeat center center;
 	background-size: 100% 100%;
 	position: relative;
 	z-index: 100;
@@ -181,7 +181,7 @@ a:hover {
 
 
 .head h1 {
-	color: #fff;
+	color: #185abd;
 	text-align: center;
 	font-size: .4rem;
 	line-height: .8rem;
@@ -194,9 +194,22 @@ a:hover {
 	margin-right: .2rem
 }
 
+.head a:hover {
+	cursor: pointer;
+	/* 背景变色 */
+	background: white;
+	/* 透明度 */
+	opacity: 0.5;
+}
+
+.titlename {
+	font-size: 50px;
+	font-weight: 200px;
+}
+
 .navbar {
-	margin-right: 50px;
-	margin-left: 50px;
+	margin-right: 40px;
+	margin-left: 40px;
 }
 
 
