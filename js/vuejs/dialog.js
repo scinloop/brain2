@@ -39,13 +39,14 @@ new Vue({
             })
         },
         closeDialog() {
-            this.dialogVisible = false;
+            this.dialogVisible = false;//关闭窗口
         },
         handleClose(done) {
             this.closeDialog();
             done();
         },
         initECharts() {
+            // 初始化图表
             this.thistitle = "第一步: 数据采集​​和预处理"
             this.label1 = "去除噪音"
             this.label2 = "去滤波"
@@ -103,6 +104,7 @@ new Vue({
             myChart.setOption(option);
         },
         run() {
+            //count为第几页
             if (this.count === 0) {
                 this.showFirstPicture = true
                 this.$nextTick(() => {
@@ -156,6 +158,7 @@ new Vue({
             myChart.setOption(option);
         },
         thirdEcharts() {
+            //初始化数据
             this.thistitle = "第三步: 机器学习模型选择"
             this.label1 = "支持向量机 (SVM)"
             this.label2 = "随机森林"
@@ -372,6 +375,7 @@ new Vue({
             console.log(this.count)
         },
         changepage() {
+            //统计跳转到了第几页
             if (this.count === 0) {
                 this.showFirstPicture = false
                 this.initECharts()
