@@ -25,7 +25,8 @@ $(function () {
             },
             xAxis: [{
                 type: 'category',
-                data: ['浙江', '上海', '江苏', '广东', '北京', '深圳', '安徽'],
+                name: '时长/天',
+                data: ['0-49', '50-99', '100-149', '150-199', '200-249', '250-300', '>300'],
                 axisLine: {
                     show: true,
                     lineStyle: {
@@ -51,6 +52,7 @@ $(function () {
             }],
             yAxis: [{
                 type: 'value',
+                name: '人数',
                 axisLabel: {
                     //formatter: '{value} %'
                     show: true,
@@ -80,7 +82,7 @@ $(function () {
                 {
 
                     type: 'bar',
-                    data: [1500, 1200, 600, 200, 300, 300, 900],
+                    data: [15, 12, 6, 2, 3, 3, 9],
                     barWidth: '35%', //柱子宽度
                     // barGap: 1, //柱子之间间距
                     itemStyle: {
@@ -117,7 +119,7 @@ $(function () {
             },
             legend: {
                 top: '0%',
-                data: ['安卓', 'IOS'],
+                data: ['未病发', '病发'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -183,7 +185,7 @@ $(function () {
             }],
             series: [
                 {
-                    name: '安卓',
+                    name: '未病发',
                     type: 'line',
                     smooth: true,
                     symbol: 'circle',
@@ -219,7 +221,7 @@ $(function () {
 
                 },
                 {
-                    name: 'IOS',
+                    name: '病发',
                     type: 'line',
                     smooth: true,
                     symbol: 'circle',
@@ -303,7 +305,7 @@ $(function () {
                 itemGap: 12,
                 bottom: '3%',
 
-                data: ['浙江', '上海', '广东', '北京', '深圳'],
+                data: ['0-9', '10-19', '20-39', '40-49', '>50'],
                 textStyle: {
                     color: 'rgba(255,255,255,.6)',
                 }
@@ -311,7 +313,7 @@ $(function () {
 
             series: [
                 {
-                    name: '浙江',
+                    name: '0-9',
                     type: 'pie',
                     clockWise: false,
                     center: ['50%', '42%'],
@@ -329,7 +331,7 @@ $(function () {
                     }]
                 },
                 {
-                    name: '上海',
+                    name: '10-19',
                     type: 'pie',
                     clockWise: false,
                     center: ['50%', '42%'],
@@ -347,7 +349,7 @@ $(function () {
                     }]
                 },
                 {
-                    name: '广东',
+                    name: '20-39',
                     type: 'pie',
                     clockWise: false,
                     hoverAnimation: false,
@@ -365,7 +367,7 @@ $(function () {
                     }]
                 },
                 {
-                    name: '北京',
+                    name: '40-49',
                     type: 'pie',
                     clockWise: false,
                     hoverAnimation: false,
@@ -383,7 +385,7 @@ $(function () {
                     }]
                 },
                 {
-                    name: '深圳',
+                    name: '>50',
                     type: 'pie',
                     clockWise: false,
                     hoverAnimation: false,
@@ -434,7 +436,7 @@ $(function () {
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
-                data: ['0岁以下', '20-29岁', '30-39岁', '40-49岁', '50岁以上'],
+                data: ['20-29岁', '30-39岁', '40-49岁', '50-59岁', '60岁以上'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -472,7 +474,7 @@ $(function () {
         option = {
 
             title: [{
-                text: '职业分布',
+                text: '性别分布',
                 left: 'center',
                 textStyle: {
                     color: '#fff',
@@ -492,7 +494,7 @@ $(function () {
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
-                data: ['电子商务', '教育', 'IT/互联网', '金融', '学生', '其他'],
+                data: ['男性', '女性'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -508,12 +510,12 @@ $(function () {
                     label: { show: false },
                     labelLine: { show: false },
                     data: [
-                        { value: 5, name: '电子商务' },
-                        { value: 1, name: '教育' },
-                        { value: 6, name: 'IT/互联网' },
-                        { value: 2, name: '金融' },
-                        { value: 1, name: '学生' },
-                        { value: 1, name: '其他' },
+                        { value: 56, name: '男性' },
+                        { value: 44, name: '女性' },
+                        // { value: 6, name: 'IT/互联网' },
+                        // { value: 2, name: '金融' },
+                        // { value: 1, name: '学生' },
+                        // { value: 1, name: '其他' },
                     ]
                 }
             ]
@@ -530,7 +532,7 @@ $(function () {
         var myChart = echarts.init(document.getElementById('fb3'));
         option = {
             title: [{
-                text: '兴趣分布',
+                text: '病理分布',
                 left: 'center',
                 textStyle: {
                     color: '#fff',
@@ -549,7 +551,7 @@ $(function () {
                 top: '70%',
                 itemWidth: 10,
                 itemHeight: 10,
-                data: ['汽车', '旅游', '财经', '教育', '软件', '其他'],
+                data: ['癫痫', '痴呆', '帕金森', '阿尔茨海默', '认知错误', '其他'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -557,7 +559,7 @@ $(function () {
             },
             series: [
                 {
-                    name: '兴趣分布',
+                    name: '病理分布',
                     type: 'pie',
                     center: ['50%', '42%'],
                     radius: ['40%', '60%'],
@@ -565,11 +567,11 @@ $(function () {
                     label: { show: false },
                     labelLine: { show: false },
                     data: [
-                        { value: 2, name: '汽车' },
-                        { value: 3, name: '旅游' },
-                        { value: 1, name: '财经' },
-                        { value: 4, name: '教育' },
-                        { value: 8, name: '软件' },
+                        { value: 2, name: '癫痫' },
+                        { value: 3, name: '痴呆' },
+                        { value: 1, name: '帕金森' },
+                        { value: 4, name: '阿尔茨海默' },
+                        { value: 8, name: '认证错误' },
                         { value: 1, name: '其他' },
                     ]
                 }

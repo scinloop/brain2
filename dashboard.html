@@ -37,14 +37,14 @@
     <div class="canvas" style="opacity: .2">
         <iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
     </div>
-    <div class="loading">
+    <!-- <div class="loading">
         <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
-    </div>
+    </div> -->
 
     <div class="head">
         <div class="buttonslect"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><img src="images/photo.png"
                 style="	border-radius: 20px;">
-            <span id="app" style="padding-left: 40px; padding-top: 20px;">
+            <span id="app" style="padding-left: 40px; padding-top: 20px;position: relative;z-index: 100000000000;">
                 <el-button @click="openDialog" style="font-weight: 600;"> 方法选择 </el-button>
                 <el-dialog :title="thistitle" :visible.sync="dialogVisible" width="80%" :before-close="handleClose">
                     <el-card class="box-card" shadow="hover" v-if="showFirstPicture">
@@ -96,7 +96,7 @@
             <h1 class="navbar"><i class="bi bi-chat-dots" style="color: white;"></i>消息</h1>
         </a>
         <a href="dataset.html">
-            <h1 class="navbar"><i class="bi bi-database" style="color: white;"></i>数据集</h1>
+            <h1 class="navbar"><i class="bi bi-file-earmark-text" style="color: white;"></i>数据集</h1>
         </a>
         <div class="weather"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span></div>
 
@@ -125,11 +125,12 @@
         <ul class="clearfix">
             <li>
                 <div class="boxall" style="height: 4.2rem">
-                    <div class="alltitle">模块标题样式</div>
+                    <div class="alltitle">病人患病时长</div>
                     <div class="allnav" id="echart2"></div>
                     <div class="boxfoot"></div>
                 </div>
                 <div class="boxall" style="height: 4.2rem">
+                    <div class="alltitle">病人情况分布图</div>
                     <div style="height:100%; width: 100%;">
                         <div class="sy" id="fb1"></div>
                         <div class="sy" id="fb2"></div>
@@ -144,14 +145,14 @@
                 <div class="bar">
                     <div class="barbox">
                         <ul class="clearfix">
-                            <li class="pulll_left counter">1251189</li>
-                            <li class="pulll_left counter">3912410</li>
+                            <li class="pulll_left counter">125189</li>
+                            <li class="pulll_left counter">391</li>
                         </ul>
                     </div>
                     <div class="barbox2">
                         <ul class="clearfix">
                             <li class="pulll_left">总访问量</li>
-                            <li class="pulll_left">2018年总支出情</li>
+                            <li class="pulll_left">总病人数</li>
                         </ul>
                     </div>
                 </div>
@@ -164,12 +165,12 @@
             </li>
             <li>
                 <div class="boxall" style="height:4.2rem">
-                    <div class="alltitle">模块标题样式</div>
+                    <div class="alltitle">是否病发图</div>
                     <div class="allnav" id="echart4"></div>
                     <div class="boxfoot"></div>
                 </div>
                 <div class="boxall" style="height: 4.2rem">
-                    <div class="alltitle">模块标题样式</div>
+                    <div class="alltitle">病人治疗周期</div>
                     <div class="allnav" id="echart6"></div>
                     <div class="boxfoot"></div>
                 </div>

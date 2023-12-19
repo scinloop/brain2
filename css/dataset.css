@@ -1,0 +1,64 @@
+.backgroundof-dataset {
+    display: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* .backgroundof-dataset div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    font-size: 2em;
+
+} */
+
+.datamain {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.buttondata {
+    width: 60px;
+    height: 30px;
+    background-color: #708AE2;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.buttondata:hover {
+    background-color: #13d162;
+
+}
+
+div form label {
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+
+}
+
+div h3 {
+    font-size: 20px;
+}

@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <title>www.husonghe.com</title>
+  <!-- 页面样式设置，包括背景渐变和鼠标样式 -->
   <style>
     html {
       height: 100%;
@@ -20,28 +22,24 @@
 </head>
 
 <body>
-
-
+  <!-- canvas 元素，用于绘制图形 -->
   <canvas id="canv" width="1920" height="572"></canvas>
+
+  <!-- JavaScript 脚本，用于控制 canvas 内容和动画 -->
   <script>
-    var num = 200;
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    var max = 100;
-    var _x = 0;
-    var _y = 0;
-    var _z = 150;
-    var dtr = function (d) {
-      return d * Math.PI / 180;
-    };
+    // 初始化变量和函数
+    var num = 200; // 粒子数量
+    var w = window.innerWidth; // 浏览器窗口宽度
+    var h = window.innerHeight; // 浏览器窗口高度
+    var max = 100; // 最大值
+    var _x = 0; // 初始 X 坐标
+    var _y = 0; // 初始 Y 坐标
+    var _z = 150; // 初始 Z 坐标
+    var dtr = function (d) { return d * Math.PI / 180; }; // 角度转弧度
+    var rnd = function () { return Math.sin(Math.floor(Math.random() * 360) * Math.PI / 180); }; // 随机数生成器
+    var dist = function (p1, p2, p3) { return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) + Math.pow(p2.z - p1.z, 2)); }; // 计算距离的函数
 
-    var rnd = function () {
-      return Math.sin(Math.floor(Math.random() * 360) * Math.PI / 180);
-    };
-    var dist = function (p1, p2, p3) {
-      return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) + Math.pow(p2.z - p1.z, 2));
-    };
-
+    // 初始化摄像头对象
     var cam = {
       obj: {
         x: _x,
@@ -71,6 +69,7 @@
         z: 0
       },
       upd: function () {
+        // 更新摄像头位置和角度
         cam.dist.x = cam.dest.x - cam.obj.x;
         cam.dist.y = cam.dest.y - cam.obj.y;
         cam.dist.z = cam.dest.z - cam.obj.z;

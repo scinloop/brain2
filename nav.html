@@ -2,81 +2,85 @@
 <html>
 
 <head>
+  <!-- 文档的字符编码 -->
   <meta charset="utf-8">
+  <!-- 网页标题 -->
   <title>index</title>
+  <!-- 引入jQuery库 -->
   <script type="text/javascript" src="js/jquery.js"></script>
+  <!-- 引入通用样式表 -->
   <link rel="stylesheet" href="css/comon0.css">
+  <!-- 引入Bootstrap图标库 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- 设置网页图标 -->
   <link rel="shortcut icon" href="/head.ico" />
 </head>
 <script>
+  // 当窗口加载完毕时执行，用于隐藏加载动画
   $(window).load(function () {
     $(".loading").fadeOut()
   })
 
-  /****/
+  // 文档就绪时执行，设置根元素字体大小
   $(document).ready(function () {
     var whei = $(window).width()
     $("html").css({ fontSize: whei / 20 })
+    // 当窗口大小改变时重新设置字体大小
     $(window).resize(function () {
       var whei = $(window).width()
       $("html").css({ fontSize: whei / 20 })
     });
   });
 </script>
+<!-- 引入ECharts库 -->
 <script type="text/javascript" src="js/echarts.min.js"></script>
+<!-- 引入自定义的JavaScript文件 -->
 <script language="JavaScript" src="js/js.js"></script>
 
 <body>
-  <div class="canvas" style="opacity: .2">
-    <iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
-  </div>
-  <!-- <div class="loading">
-    <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
-  </div> -->
-
+  <!-- 头部导航栏区域 -->
   <div class="head">
-    <div class="buttonslect"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><img src="images/photo.png"
-        style="	border-radius: 20px;">
+    <!-- 导航按钮和个人照片 -->
+    <div class="buttonslect">
+      <img src="images/photo.png" style="	border-radius: 20px;">
     </div>
 
+    <!-- 导航链接 -->
     <a href="dashboard.html">
       <h1 class="navbar"><i class="bi bi-clipboard-data" style="color: white;"></i> 仪表盘</h1>
     </a>
     <a href="patient.html">
       <h1 class="navbar"><i class="bi bi-people-fill" style="color: white;"></i> 病人</h1>
     </a>
+    <!-- 网站标志 -->
     <div class="titlename"><img src="images/logo.png"></div>
     <a href="message.html">
       <h1 class="navbar"><i class="bi bi-chat-dots" style="color: white;"></i>消息</h1>
     </a>
     <a href="dataset.html">
-      <h1 class="navbar"><i class="bi bi-database" style="color: white;"></i>数据集</h1>
+      <h1 class="navbar"><i class="bi bi-file-earmark-text" style="color: white;"></i>数据集</h1>
     </a>
-    <div class="weather"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span></div>
-
-
+    <!-- 显示当前时间 -->
+    <div class="weather"><span id="showTime"></span></div>
 
     <script>
+      // JavaScript定时器用于显示当前时间
       var t = null;
-      t = setTimeout(time, 1000);//開始运行
+      t = setTimeout(time, 1000); // 开始运行
       function time() {
-        clearTimeout(t);//清除定时器
+        clearTimeout(t); // 清除定时器
         dt = new Date();
         var y = dt.getFullYear();
         var mt = dt.getMonth() + 1;
         var day = dt.getDate();
-        var h = dt.getHours();//获取时
-        var m = dt.getMinutes();//获取分
-        var s = dt.getSeconds();//获取秒
-        document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
-        t = setTimeout(time, 1000); //设定定时器，循环运行     
+        var h = dt.getHours(); // 获取时
+        var m = dt.getMinutes(); // 获取分
+        var s = dt.getSeconds(); // 获取秒
+        document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "日-" + h + "时" + m + "分" + s + "秒";
+        t = setTimeout(time, 1000); // 设定定时器，循环运行
       }
-
     </script>
-
   </div>
-
 </body>
 
 </html>

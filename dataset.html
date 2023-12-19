@@ -2,28 +2,74 @@
 <html lang="en">
 
 <head>
+    <!-- 设置文档的字符集和视口属性 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
     <title>Document</title>
-    <!-- 引入 jQuery -->
+
+    <!-- 引入 jQuery 库 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        // 当文档加载完成后，从 "nav.html" 加载导航栏内容到 id 为 "navbar-placeholder" 的元素中
         $(function () {
             $("#navbar-placeholder").load("nav.html");
         });
     </script>
-    <!-- 网络 -->
-    <!-- 引入样式 -->
+
+    <!-- 引入 Element UI 样式 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
+    <!-- 引入 Vue.js 和 Element UI 组件库 -->
     <script src="./js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <!-- 引入自定义样式表 -->
+    <link rel="stylesheet" href="css/dataset.css" />
 </head>
 
 <body>
+    <!-- 导航栏占位符 -->
     <div id="navbar-placeholder"></div>
 
+    <!-- 数据集主要内容区域 -->
+    <div class="datamain">
+        <br />
+        <!-- 数据集背景和布局 -->
+        <div class="backgroundof-dataset">
+            <!-- 数据集导入部分 -->
+            <div style="text-align: center; background-color: #708ae2">
+                <h3>导入数据集</h3>
+            </div>
+            <br />
+            <div>
+                <!-- 数据集选择表单 -->
+                <form>
+                    <label> <input type="checkbox" checked />德国波恩大学癫痫脑电图数据集
+                    </label><br />
+                </form>
+            </div>
+            <br />
+            <!-- 数据集信息展示部分 -->
+            <div style="text-align: center; background-color: #708ae2">
+                <h3>数据集信息</h3>
+            </div>
+            <br />
+            <div>
+                <!-- 数据集详细信息表单 -->
+                <form class="baise" style="background-color: white">
+                    <label> 收集数据的样本数量 : 500</label><br />
+                    <label> 样本持续时间 : 23.6 s</label><br />
+                    <label> 采样率 : 173.61 HZ</label><br />
+                </form>
+            </div>
 
+            <br />
+            <!-- 确认和取消按钮 -->
+            <div style="text-align: center; margin-top: 100px">
+                <button class="buttondata" id="confirmdataset">confirm</button>
+                <button class="buttondata" id="canceldataset">cancel</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 

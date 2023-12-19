@@ -2,36 +2,45 @@
 <html lang="en">
 
 <head>
+    <!-- 设置文档的字符集和视口属性 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
     <title>Document</title>
-    <!-- 引入 jQuery -->
+
+    <!-- 引入 jQuery 库 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        // 当文档加载完成后，从 "nav.html" 加载导航栏内容到 id 为 "navbar-placeholder" 的元素中
         $(function () {
             $("#navbar-placeholder").load("nav.html");
         });
     </script>
-    <!-- 网络 -->
-    <!-- 引入样式 -->
+
+    <!-- 引入 Element UI 样式 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
+    <!-- 引入 Vue.js 和 Element UI JavaScript 库 -->
     <script src="./js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 
 <body>
+    <!-- 导航栏内容占位符 -->
     <div id="navbar-placeholder"></div>
-    <div style="display: flex;
-    justify-content: center;
-    align-items: center">
+
+    <!-- 页面标题 -->
+    <div style="display: flex; justify-content: center; align-items: center">
         <h1 style="color:#848B90">Patient</h1>
     </div>
     <br>
-    <div id="app">
+
+    <!-- Vue.js 应用的根元素 -->
+    <div id="app" style="position:relative; z-index: 10000000000;">
+        <!-- Element UI 表格组件，用于展示病人数据 -->
         <el-table
             :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()) || data.address.toLowerCase().includes(search.toLowerCase()))"
             style="width: 100%">
+            <!-- 定义表格列和数据属性的映射 -->
             <el-table-column label="序号" prop="number">
             </el-table-column>
             <el-table-column label="入院时间" prop="date">
@@ -48,26 +57,36 @@
             </el-table-column>
             <el-table-column label="出生日期" prop="birthday">
             </el-table-column>
+
+            <!-- 带搜索功能的列 -->
             <el-table-column align="right">
                 <template slot="header" slot-scope="scope">
+                    <!-- 搜索框 -->
                     <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
                 </template>
                 <template slot-scope="scope">
-                    <a href="./AAA.html">
+                    <!-- 行内操作按钮 -->
+                    <a href="./someone.html">
                         <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">详情</el-button>
                     </a>
                     <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
+
+        <!-- 分页组件 -->
         <el-pagination background layout="prev, pager, next" :total="10">
         </el-pagination>
     </div>
+
+    <!-- Vue 实例和方法 -->
     <script>
         new Vue({
             el: "#app",
             data() {
+                // Vue 实例的数据对象
                 return {
+                    // 表格数据
                     tableData: [{
                         number: '1',
                         date: '2016-05-02',
@@ -133,11 +152,12 @@
                         birthday: '1957-02-02'
                     },
                     ],
-
+                    // 搜索关键词
                     search: ''
                 }
             },
             methods: {
+                // 编辑和删除操作的方法
                 handleEdit(index, row) {
                     console.log('ggg');
                 },
@@ -146,9 +166,7 @@
                 }
             },
         })
-
     </script>
-
 
 </body>
 

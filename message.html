@@ -2,29 +2,74 @@
 <html lang="en">
 
 <head>
+    <!-- 设置字符集和视口属性 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标题 -->
     <title>Document</title>
+
     <!-- 引入 jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        // 当文档加载完毕时，从nav.html中加载导航栏内容
         $(function () {
             $("#navbar-placeholder").load("nav.html");
         });
     </script>
-    <!-- 网络 -->
-    <!-- 引入样式 -->
+
+    <!-- 引入 Element UI 样式和组件库 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
     <script src="./js/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <!-- 引入自定义的样式表 -->
+    <link rel="stylesheet" href="css/message.css" />
 </head>
 
 <body>
+    <!-- 导航栏占位符，内容将从 nav.html 加载 -->
     <div id="navbar-placeholder"></div>
 
+    <!-- 消息提交区域 -->
+    <div class="card_message" style="z-index: 10000000;">
+        <!-- 标题区域 -->
+        <div class="card_title">
+            <h1 style="color:white;">健康消息意见发送</h1>
+        </div>
+        <!-- 提交表单区域 -->
+        <div class="card-post">
+            <!-- 下拉选择病人 -->
+            <select name="Patient" id="Patient">
+                <option value="patient">选择病人</option>
+                <option value="patient1">张三</option>
+                <option value="patient2">李四</option>
+                <option value="patient3">王五</option>
+            </select>
+            <!-- 文本输入区域 -->
+            <section>
+                <textarea id="post-title" type="text" placeholder="题目"></textarea><br />
+                <textarea rows="10" id="post-content" placeholder="正文"></textarea><br />
+                <!-- 提交按钮 -->
+                <button class="submitButton" type="button" id="addButton">
+                    提交
+                </button>
+            </section>
+            <br />
 
-
+            <!-- 过往提交内容区域 -->
+            <div class="card_title">
+                <h2>Past post content</h2>
+                <hr />
+                <!-- 过往提交内容的表格 -->
+                <table class="pure-table pure-table-horizontal">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <!-- 过往提交内容区域结束 -->
+        </div>
+    </div>
+    <br />
 </body>
 
 </html>
