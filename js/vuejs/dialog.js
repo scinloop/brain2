@@ -1,6 +1,7 @@
 new Vue({
     el: "#app",
     data() {
+        //打开时初始化数据
         return {
             dialogVisible: false,
             count: 0,
@@ -119,6 +120,7 @@ new Vue({
             }
         },
         secondEcharts() {
+            //第二步
             this.thistitle = "第二步: 特征提取和选择"
             this.label1 = "时域特征"
             this.label2 = "频域特征"
@@ -158,6 +160,7 @@ new Vue({
             myChart.setOption(option);
         },
         thirdEcharts() {
+            //第三步
             //初始化数据
             this.thistitle = "第三步: 机器学习模型选择"
             this.label1 = "支持向量机 (SVM)"
@@ -202,6 +205,7 @@ new Vue({
             myChart.setOption(option);
         },
         forthEcharts() {
+            //第四步
             this.thistitle = "第四步: 模型评估和优化"
             this.label1 = "交叉验证"
             this.label2 = "混淆矩阵"
@@ -358,7 +362,7 @@ new Vue({
             return confusionMatrixData;
         },
         nextpage() {
-            // 初始化图表
+            // 初始化图表，下一张图
             this.count = this.count + 1
             if (this.count > 4) {
                 this.count = 4
@@ -367,6 +371,7 @@ new Vue({
             console.log(this.count)
         },
         lastpage() {
+            // 初始化图表，上一张图
             this.count = this.count - 1
             if (this.count < 0) {
                 this.count = 0
@@ -399,6 +404,7 @@ new Vue({
             }
         },
         handlePageChange(newPage) {
+            //四张图进行翻页切换
             // 在这里可以执行你想要触发的事件，比如加载新的数据或执行其他操作
             console.log('用户点击了第 ' + newPage + ' 页');
             // 在这里添加你的自定义逻辑
